@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="NumberHead">
+    <h2> Enter a Number</h2>
+</div>
+
+<form asp-action="results">  <!-- Pass a value to the results view -->
+
+    <div class="input-field">
+        <label for="number">Number</label>
+        <input type="text" name="number" />
+    </div>
+    <button type="submit" class="btn-large waves-effect waves-light teal accent-3"> Analyze </button>
+
+</form>
+
+<!-- Toast! -->
+    <a class="waves-effect waves-light btn toastBtn" onclick="Materialize.toast('27 is a good one!', 4000, 'rounded')">Need a Number?</a>
+
+<!-- Modal! -->
+    <button class="waves-effect waves-light btn modalThing" data-target="modal1">About</button>
+
+<!-- Content for the modal! -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <h4>About This Site</h4>
+        <p>This site was made using only materialize markup and elements.
+         It conisits of toasts, modals, staggaredLists, and other fun things!
+        This program will take a number that the user provides and it will determine properties of that number.</p>
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+</div>

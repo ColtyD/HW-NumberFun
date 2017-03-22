@@ -1,0 +1,80 @@
+﻿@model NumberFun.Models.NumberAnalysis
+
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+   
+}
+
+<div class="NumberHead">
+    <h2>Number: @Model.Number </h2> <!-- Use the number passed form the Index.html page -->
+</div>
+
+<!-- Staggared List effect on the button -->
+<div class="row">
+    <a href="#!" class="btn waves-effect waves-light teal accent-3" onclick="Materialize.showStaggeredList('#staggered-list')">See Results</a>
+    @Html.ActionLink("Go Back", "Index", "Home", null, new { @class = "btn wave-effect wave-light" })
+</div>
+
+<div class="row">
+    <ul class="staggeredList" id="staggered-list">
+
+        <!-- The function needed to be called and ran before I could display the information.
+            I am not sure if there is a better way to do this? I had some weird issues with things 
+            bing displayed propperly, so I ended up just hiding the div -->
+
+        <!-- Prime number information -->
+        <li class="staggeredListItem" style="opacity: 0;">
+            <div class="col s12 m6">
+                <h4>Prime</h4>
+                <p class="hiddendiv">@Model.isPrime()</p>
+                <p>@Model.Prime</p>
+                <p>The number has no divisors except itself and 1.</p>
+            </div>
+
+        </li>
+
+        <!-- Perfect number information -->
+        <li class="staggeredListItem" style="opacity: 0;">
+            <div class="col s12 m6">
+                <h4>Perfect</h4>
+                <p class="hiddendiv">@Model.isPerfect()</p>
+                <p>@Model.Perfect</p>
+                <p>The sum of the number’s divisors except itself is the number.</p>
+            </div>
+        </li>
+
+        <!-- Squareful number information -->
+        <li class="staggeredListItem" style="opacity: 0;">
+            <div class="col s12 m6">
+                <h4>Squareful</h4>
+                <p class="hiddendiv">@Model.isSquareful()</p>
+                <p>@Model.Squareful</p>
+                <p>At least one prime factor of the number is repeated.</p>
+            </div>
+        </li>
+
+        <!-- Powerful number information -->
+        <li class="staggeredListItem" style="opacity: 0;">
+            <div class="col s12 m6">
+                <h4>Powerful</h4>
+                <p class="hiddendiv">@Model.isPowerful()</p>
+                <p>@Model.Powerful</p>
+                <p>Every prime factor of the number is repeated. </p>
+            </div>
+        </li>
+
+        <!-- Palindrome number information -->
+        <li class="staggeredListItem" style="opacity: 0;">
+            <div class="col s12 m6">
+                <h4>Plaindromic</h4>
+                <p class="hiddendiv">@Model.isPalindrome()</p>
+                <p>@Model.Plaindromic</p>
+                <p>The digits are the same forwards and backwards  (read left-to-right or right-to-left). </p>
+            </div>
+        </li>
+    </ul>
+
+</div>
+
